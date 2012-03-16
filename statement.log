@@ -1,0 +1,30 @@
+一、Jodd是一个普通开源Java包，你可以把Jodd想象成Java的"瑞士军刀"。不仅小，锋利而且包含许多便利的功能。Jodd 提供的功能有：
+1)提供操作Java bean；
+2)可以从各种数据源加载Bean；
+3)简化JDBC的接连与代码；
+4)剖析SQL查询；
+5)处理时间与日期；
+6)操作与格式化String；
+7)搜索本地硬盘上的文件；
+8)帮助处理Servlet请求等；
+9)除此之外还包含一个很小，但实用的基于JSP的MVC框架。
+(package: jodd-3.3.1.jar jodd-wot-3.3.1.jar)
+
+二、邮件处理：activation.jar和mail.jar
+
+三、日志处理：commons-logging-1.1.1.jar
+
+四、单元测试：junit-4.10.jar
+
+五、json对象处理：org.json.jar
+
+六、java企业开发核心库：javaee.jar
+
+七、httpclient：commons-httpclient-3.0.1.jar
+
+八、光学字符识别(Character Recognition)：aspriseOCR.jar
+
+九、数据库驱动包：mysql-connector-java-5.1.13-bin.jar
+
+十、Java Communications API：comm.jar
+
