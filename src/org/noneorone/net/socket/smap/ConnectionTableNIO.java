@@ -8,7 +8,6 @@ import java.nio.channels.spi.SelectorProvider;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
-import sun.rmi.runtime.Executor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Vector;
