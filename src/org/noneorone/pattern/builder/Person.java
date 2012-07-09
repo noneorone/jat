@@ -9,11 +9,8 @@ package org.noneorone.pattern.builder;
  */
 public class Person {
 
-	@SuppressWarnings("unused")
 	private String looks;
-	@SuppressWarnings("unused")
 	private String figure;
-	@SuppressWarnings("unused")
 	private String sex;
 	
 	public void setLooks(String looks){
