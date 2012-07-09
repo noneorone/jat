@@ -4,7 +4,7 @@ public class Commission {
 
 	public static void main(String[] args){
 		
-		String source = "http://www.cse.iitk.ac.in/users/anuag/crypto.pdf";
+		String source = "http://controljs.googlecode.com/svn-history/trunk/control.js";
 		FileCopy.copy(source, System.getProperty("user.home"), true);
 //		FileCopy.copy("http://static.springsource.org/spring-roo/reference/pdf/spring-roo-docs.pdf", System.getProperty("user.home"), true);
 //		FileCopy.copy("http://baike.baidu.com/view/1193524.htm", System.getProperty("user.home"), true);
