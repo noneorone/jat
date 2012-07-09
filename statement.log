@@ -28,3 +28,6 @@
 
 十、Java Communications API：comm.jar
 
+十一、mina-core-2.0.4.jar是apache的mina框架核心包，slf4j-api-1.6.1.jar是日志框架
+
+十二、control.js为Steve Souders做的一个东东—— ControllJs， 主要为了是解决网页加载中Js文件的性能问题
