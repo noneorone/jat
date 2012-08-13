@@ -63,7 +63,7 @@
 //	}
 //
 //}
-package org.noneorone.data.mysql;
+package org.noneorone.sql.mysql;
 
 import java.io.File;
 import java.io.FileNotFoundException;
