@@ -8,7 +8,7 @@ public class Test {
 	public static void main(String[] args) {
 		System.out.println(formatDate("19 Dec 2009"));
 	}
-	
+
 	private static String formatDate(String date){
 		Map<String, String> months = new HashMap<String, String>();
 		months.put("Jan", "1");
