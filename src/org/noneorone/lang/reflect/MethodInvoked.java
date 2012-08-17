@@ -1,5 +1,6 @@
 package org.noneorone.lang.reflect;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -27,10 +28,16 @@ public class MethodInvoked {
 			try {
 				if(method.getName().equals(invokedMethod)){
 					System.out.println("methodName--> "+method.getName());
-					//obj = method.invoke(object, paramObject);
+					obj = method.invoke(object, paramObject);
 //						break;
 				}
 			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
    }
