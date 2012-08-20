@@ -25,5 +25,6 @@
 	<classpathentry kind="lib" path="lib/lucene-core-3.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/reflectasm-1.05-all.jar"/>
 	<classpathentry kind="lib" path="lib/follow-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-demo-3.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
