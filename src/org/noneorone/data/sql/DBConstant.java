@@ -1,4 +1,4 @@
-package org.noneorone.sql;
+package org.noneorone.data.sql;
 
 public class DBConstant {
 

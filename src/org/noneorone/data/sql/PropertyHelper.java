@@ -1,4 +1,4 @@
-package org.noneorone.sql;
+package org.noneorone.data.sql;
 
 import java.io.IOException;
 import java.util.Properties;
