@@ -11,6 +11,14 @@ import java.io.File;
  */
 public class FetchDir {
 
+	private FetchDir(){}
+	
+	public static String getCurrentPackPath(Class<?> currentClass) {
+		final StringBuilder canno = new StringBuilder(currentClass.getCanonicalName());
+		canno.delete(canno.lastIndexOf("."), canno.length());
+		return System.getProperty("user.dir") + "\\src\\" + canno.toString().replace('.', '\\') + '\\';
+	}
+	
 	public static void fetchDir(String path){
 		File fp = new File(path);
 		File[] roots = fp.listFiles();
