@@ -12,7 +12,9 @@ public class DBHelper {
 	private static Connection connection;
 	private static PropertyHelper propertyHelper;
 	
-	private DBHelper(){
+	private DBHelper(){}
+	
+	static {
 		propertyHelper = new PropertyHelper();
 	}
 	
