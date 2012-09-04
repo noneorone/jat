@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/org/noneorone/javax/servlet/ValidationCode.java=UTF-8
+encoding//src/org/noneorone/lang/regex/Commission.java=GBK
+encoding//src/org/noneorone/lang/regex/IDSecondGen.java=GBK
+encoding//src/org/noneorone/lang/regex/RegExpConst.java=GBK
 encoding//src/org/noneorone/net/RouteBiz.java=UTF-8
 encoding//src/org/noneorone/net/WapQuery.java=UTF-8
 encoding//src/org/noneorone/net/socket/smap=GBK
