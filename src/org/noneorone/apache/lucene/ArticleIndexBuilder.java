@@ -17,8 +17,6 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
-import com.wangxiaowang.article.Article;
-import com.wangxiaowang.article.ArticleProvider;
 public class ArticleIndexBuilder {
 	
 	private String indexPath;
@@ -31,68 +29,68 @@ public class ArticleIndexBuilder {
 		this.recordCountPreTime = recordCountPreTime;
 	}
 	
-	public void build() {
-		FSDirectory directory = null;
-		IndexWriterConfig conf = null;
-		IndexWriter writer = null;
-		try {
-			directory = FSDirectory.open(new File(indexPath));
-			conf = new IndexWriterConfig(Version.LUCENE_36, analyzer);
-			conf.setOpenMode(OpenMode.CREATE);
-			writer = new IndexWriter(directory, conf);
-			
-			ArticleProvider articleProvider = new ArticleProvider(recordCountPreTime);
-			while (articleProvider.hasNext()) {
-				List<Article> articleList = articleProvider.next();
-				addDocs(writer, articleList);
-			}
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				writer.close();
-				directory.close();
-				writer = null;
-				directory = null;
-			} catch (CorruptIndexException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	private void addDocs(IndexWriter writer, List<Article> articleList) throws CorruptIndexException, IOException {
-		for (Article article : articleList) {
-			Document doc = new Document();
-			addFileds(doc, article);
-			writer.addDocument(doc);
-			System.out.println("=========>one record ok   " + article.getStr("title"));
-		}
-	}
-
-	private void addFileds(Document doc, Article article) {
-		doc.add(getKeywordsField("id", article.getInt("id") + ""));
-		doc.add(getIndexField("title", article.getStr("title")));
-		doc.add(getIndexField("content", article.getStr("keywords")));
-		doc.add(getKeywordsField("subject_id", article.getInt("subject_id") + ""));
-		doc.add(getKeywordsField("subject_name", article.getStr("subject_name")));
-		doc.add(getKeywordsField("publish_time", fomartPublishTime(article.getTimestamp("publish_time"))));
-	}
-	
-	private String fomartPublishTime(Timestamp time) {
-		String result = "";
-		if (time == null)
-			time = new Timestamp(System.currentTimeMillis());
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		result = df.format(time);
-		return result;
-	}
-
-	private Field getKeywordsField(String name, String value) {
-		return new Field(name, value, Store.YES, Index.NOT_ANALYZED);
-	}
+//	public void build() {
+//		FSDirectory directory = null;
+//		IndexWriterConfig conf = null;
+//		IndexWriter writer = null;
+//		try {
+//			directory = FSDirectory.open(new File(indexPath));
+//			conf = new IndexWriterConfig(Version.LUCENE_36, analyzer);
+//			conf.setOpenMode(OpenMode.CREATE);
+//			writer = new IndexWriter(directory, conf);
+//
+//			ArticleProvider articleProvider = new ArticleProvider(recordCountPreTime);
+//			while (articleProvider.hasNext()) {
+//				List<Article> articleList = articleProvider.next();
+//				addDocs(writer, articleList);
+//			}
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				writer.close();
+//				directory.close();
+//				writer = null;
+//				directory = null;
+//			} catch (CorruptIndexException e) {
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+//
+//	private void addDocs(IndexWriter writer, List<Article> articleList) throws CorruptIndexException, IOException {
+//		for (Article article : articleList) {
+//			Document doc = new Document();
+//			addFileds(doc, article);
+//			writer.addDocument(doc);
+//			System.out.println("=========>one record ok   " + article.getStr("title"));
+//		}
+//	}
+//
+//	private void addFileds(Document doc, Article article) {
+//		doc.add(getKeywordsField("id", article.getInt("id") + ""));
+//		doc.add(getIndexField("title", article.getStr("title")));
+//		doc.add(getIndexField("content", article.getStr("keywords")));
+//		doc.add(getKeywordsField("subject_id", article.getInt("subject_id") + ""));
+//		doc.add(getKeywordsField("subject_name", article.getStr("subject_name")));
+//		doc.add(getKeywordsField("publish_time", fomartPublishTime(article.getTimestamp("publish_time"))));
+//	}
+//
+//	private String fomartPublishTime(Timestamp time) {
+//		String result = "";
+//		if (time == null)
+//			time = new Timestamp(System.currentTimeMillis());
+//		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//		result = df.format(time);
+//		return result;
+//	}
+//
+//	private Field getKeywordsField(String name, String value) {
+//		return new Field(name, value, Store.YES, Index.NOT_ANALYZED);
+//	}
 
 	private Field getIndexField(String name, String value) {
 		return new Field(name, value, Store.YES, Index.ANALYZED);
