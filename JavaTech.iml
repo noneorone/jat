@@ -274,5 +274,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="zxing-core-2.3.0" level="project" />
+    <orderEntry type="library" name="netty-all-4.0.17.Final" level="project" />
   </component>
 </module>
