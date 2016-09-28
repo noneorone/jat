@@ -30,5 +30,12 @@
 	<classpathentry kind="lib" path="lib/netty-all-4.0.17.Final.jar"/>
 	<classpathentry kind="lib" path="lib/zxing-core-2.3.0.jar"/>
 	<classpathentry kind="lib" path="lib/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.15.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-3.15.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.15.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.15.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.15.jar"/>
+	<classpathentry kind="lib" path="lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
