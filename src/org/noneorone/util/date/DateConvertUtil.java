@@ -9,6 +9,23 @@ import java.util.Random;
 
 public class DateConvertUtil {
 
+    /**
+     * 转换英文日期时间格式日期格式串
+     *
+     * @param dateStr eg.2016-11-02
+     * @return
+     */
+    public static Date parseENDateTime(String dateStr) {
+        Date date = null;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd kk:mm:ss yyyy", Locale.ENGLISH);
+            date = sdf.parse(dateStr);
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+        return date;
+    }
+    
 	/**
 	 * 获取现在时间
 	 * 
@@ -678,7 +695,8 @@ public class DateConvertUtil {
 	public static void main(String[] args) throws Exception {
 		try {
 			System.out.println(getTwoHour("20:30", "14:54"));
-			System.out.print(Integer.valueOf(getTwoDay("2006-11-03 12:22:10", "2006-11-02 11:22:09")));
+			System.out.println(Integer.valueOf(getTwoDay("2006-11-03 12:22:10", "2006-11-02 11:22:09")));
+			System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(parseENDateTime("Mon Nov 14 20:28:24 2016")));
 		} catch (Exception e) {
 			throw new Exception();
 		}
