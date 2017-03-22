@@ -3,55 +3,66 @@ package org.noneorone.util.code;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
 public class FileToBase64 {
 	/**
-	 * <p>将文件转成base64 字符串</p>
-	 * @param path 文件路径
+	 * <p>
+	 * 将文件转成base64 字符串
+	 * </p>
+	 * 
+	 * @param path
+	 *            文件路径
 	 * @return
 	 * @throws Exception
 	 */
 	public static String encodeBase64File(String path) throws Exception {
-		File  file = new File(path);
+		File file = new File(path);
 		FileInputStream inputFile = new FileInputStream(file);
-		byte[] buffer = new byte[(int)file.length()];
+		byte[] buffer = new byte[(int) file.length()];
 		inputFile.read(buffer);
-        inputFile.close();
-        return new BASE64Encoder().encode(buffer);
+		inputFile.close();
+		return Base64.getEncoder().encodeToString(buffer);
 	}
+
 	/**
-	 * <p>将base64字符解码保存文件</p>
+	 * <p>
+	 * 将base64字符解码保存文件
+	 * </p>
+	 * 
 	 * @param base64Code
 	 * @param targetPath
 	 * @throws Exception
 	 */
-	public static void decoderBase64File(String base64Code,String targetPath) throws Exception {
-		byte[] buffer = new BASE64Decoder().decodeBuffer(base64Code);
+	public static void decoderBase64File(String base64Code, String targetPath) throws Exception {
+		byte[] buffer = Base64.getDecoder().decode(base64Code);
 		FileOutputStream out = new FileOutputStream(targetPath);
 		out.write(buffer);
 		out.close();
 	}
+
 	/**
-	 * <p>将base64字符保存文本文件</p>
+	 * <p>
+	 * 将base64字符保存文本文件
+	 * </p>
+	 * 
 	 * @param base64Code
 	 * @param targetPath
 	 * @throws Exception
 	 */
-	public static void toFile(String base64Code,String targetPath) throws Exception {
+	public static void toFile(String base64Code, String targetPath) throws Exception {
 		byte[] buffer = base64Code.getBytes();
 		FileOutputStream out = new FileOutputStream(targetPath);
 		out.write(buffer);
 		out.close();
 	}
+
 	public static void main(String[] args) {
 		try {
-			String base64Code =encodeBase64File("F:\\picture\\53b6109egw1dnw8u0m9csg.gif");
+			String base64Code = encodeBase64File("F:\\picture\\53b6109egw1dnw8u0m9csg.gif");
 			System.out.println(base64Code);
 			decoderBase64File(base64Code, "D:\\base66_pic.jpg");
-			toFile(base64Code, "D:\\base64_file.txt");			
+			toFile(base64Code, "D:\\base64_file.txt");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
