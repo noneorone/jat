@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wml> 
+  <head>
+  <meta content="text/vnd.wap.wml; charset=UTF-8" forua="false" http-equiv="Content-Type"/> 
+  <meta content="no-cache" forua="false" http-equiv="Cache-Control"/> 
+  </head> 
+  
+  
+  <card newcontext="false" ordered="true" title="Google 搜尋">
+  <onevent type="onenterforward"> 
+  <refresh> 
+  <setvar name="dirflg" value=""/> 
+  </refresh> </onevent>  
+  <p align="left">  
+  <img align="bottom" alt="Google" height="17" hspace="0" src="http://www.gstatic.com/m/images/logo_small.gif" vspace="0" width="48"/> 
+  </p>
+  <p align="left">  </p>
+  
+  
+  //  P start
+  <p align="left"> 
+  中華人民共和國廣東省深圳南山區科技園 <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://www.gstatic.com/m/images/minipin_green.gif" vspace="0" width="9"/>
+  起點： 西鄉客運站 
+  <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/>
+  步行 -  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=0">
+  海湾明珠 
+  </a>
+  <br/> 
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/bus.png" vspace="0" width="15"/>
+  公車 -  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=6">
+  320路空调 
+  </a> <br/> 
+  2 分鐘 <br/>
+  海湾明珠 
+  <br/> 劳动路口 
+  <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/bus.png" vspace="0" width="15"/>
+  公車 -  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=7">
+     766路空调 
+  </a> <br/> 
+  2 分鐘 <br/>
+  劳动路口 <br/> 
+  麻布村 <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/>
+  步行 -  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=8">
+  坪洲 
+  </a> <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/cn-shenzhen-metro.png" vspace="0" width="15"/>
+  捷運 -  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=9">
+  罗宝线 
+  </a> <br/> 
+  18 分鐘 <br/> 
+  坪洲 <br/> 
+  深大 <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/>
+   步行 -  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;time=%E4%B8%8B%E5%8D%885:24&amp;date=2011-12-27&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=2&amp;si=10">
+  中華人民共和國廣東省深圳南山區科技園 
+  </a> 
+  <br/> 
+  其他路線： <br/>  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=0&amp;date=2011-12-27&amp;time=%E4%B8%8B%E5%8D%885:24">
+	M358路 → 罗宝线 </a> (45 分鐘) <br/>  
+	<img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/> 
+	<img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/bus.png" vspace="0" width="15"/>
+	<img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/> 
+	<img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/cn-shenzhen-metro.png" vspace="0" width="15"/>
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/> 
+  <br/>  <br/>  
+  <a href="/m/directions?saddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99&amp;daddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;dirflg=r&amp;ri=1&amp;date=2011-12-27&amp;time=%E4%B8%8B%E5%8D%885:24">
+  罗宝线 
+  </a> 
+  (44 分鐘) 
+  <br/>  
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/> 
+  <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/cn-shenzhen-metro.png" vspace="0" width="15"/>
+   <img align="bottom" alt="" height="15" hspace="0" src="http://maps.gstatic.com/intl/zh-TW_ALL/mapfiles/transit/iw/2/walk.png" vspace="0" width="15"/> 
+<br/>  <br/> 
+</p>
+
+
+ //// p end  
+
+
+<p align="left">  
+<a href="/m/directions?time=%E4%B8%8B%E5%8D%885:24&amp;ri=2&amp;date=2011-12-27&amp;dirflg=r&amp;saddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%9B%AD&amp;daddr=%E5%AE%9D%E5%AE%89%E5%8C%BA%E8%A5%BF%E4%B9%A1%E5%AE%A2%E8%BF%90%E7%AB%99">
+規劃回程路線 
+</a> 
+</p> 
+<p align="left"> 
+來自:   <input emptyok="true" name="saddr" size="8" type="text" value="宝安区西乡客运站"/> 
+<br/> 至:   <input emptyok="true" name="daddr" size="8" type="text" value="广东省深圳市南山区科技园"/>
+<br/>
+<select ivalue="1" multiple="false" name="dirflg"> <option value="r">
+大眾運輸 </option> <option value="d"> 開車 </option> <option value="w"> 
+步行 </option> </select> <anchor>
+<go enctype="application/x-www-form-urlencoded" href="/m/directions" method="get" sendreferer="false"> 
+<postfield name="dirflg" value="r"/> <postfield name="saddr" value="$(saddr)"/> 
+<postfield name="daddr" value="$(daddr)"/> 
+  	<postfield name="dirflg" value="$(dirflg)"/> </go>搜尋 </anchor> 
+  				</p> +
+  				 <p align="left">   
+  				<a href="/m?dirflg=r&amp;sa=N">Google 首頁 </a>
+           <br/>  <a href="/support/mobile/?p=search">說明 </a>
+  				<br/>
+  	 檢視 Google： <br/> 行動版 |  <a href="/webhp?nomo=1">傳統版 </a> <br/> </p> <p align="left"> 
+    ©2011 -  <a href="http:// m.google.com/privacy?hl=zh-TW">隱私權
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				// </a>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				// </p>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				// </card>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				// </wml>
