@@ -1,4 +1,4 @@
-package org.noneorone.io.file;
+package org.noneorone.io.file.gzip;
 
 import java.io.File;
 import java.io.FileInputStream;

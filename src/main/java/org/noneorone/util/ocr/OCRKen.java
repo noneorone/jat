@@ -45,7 +45,8 @@ public class OCRKen {
 //		String code = process("F:\\validate_code\\img\\identifyingCode.jpg");
 //		String code = process("F:\\validate_code\\img\\careers2-ad-header-so.png");
 //		String code = process("F:\\validate_code\\img\\1232085272_ddvip_6338.png");
-		String code = process("E:\\Kaptcha.jpg");
+//		String code = process("E:\\Kaptcha.jpg");
+		String code = process("D:\\test\\埋点log\\img\\20170927_162749_copy.png");
 		System.out.println(code);
 	}
 }
