@@ -23,7 +23,7 @@ public class GZIPUtils {
 
 		// String path =
 		// "D:\\test\\埋点log\\ublog2_20170927105756.3aeecfe8-3ab2-0e9f-ffff-ff.gzip";
-		String path = "D:\\test\\埋点log\\haha_1506665483225.gzip";
+		String path = "D:\\test\\埋点log\\ublog2_20171010092602.3aeecfe8-3ab2-0e9f-ffff-ffffc100a841.gzip";
 		System.out.println(path);
 		boolean isValid = isValid(path);
 		System.out.println("isValid: " + isValid);
