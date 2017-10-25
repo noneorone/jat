@@ -5,6 +5,39 @@
 	<artifactId>JavaTech</artifactId>
 	<version>v1.0</version>
 
+	<repositories>
+		<repository>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>repo2</id>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://repo2.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>ibiblio</id>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+		</repository>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>maven.net.cn</id>
+			<name>oneof the central mirrors in china</name>
+			<url>http://maven.net.cn/content/groups/public/</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
 		<dependency>
@@ -254,12 +287,8 @@
 			<version>3.3.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
-<!-- 		<dependency>
-			<groupId>com.google.zxing</groupId>
-			<artifactId>javase</artifactId>
-			<version>3.3.0</version>
-		</dependency>
- -->		
+		<!-- <dependency> <groupId>com.google.zxing</groupId> <artifactId>javase</artifactId> 
+			<version>3.3.0</version> </dependency> -->
 
 	</dependencies>
 
