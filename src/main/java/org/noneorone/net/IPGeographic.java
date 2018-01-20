@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public class IPGeographic {      
     /**    
-     * Í¨¹ıurl£¬µÃµ½urlÔ´ÎÄ¼ş    
+     * é€šè¿‡urlï¼Œå¾—åˆ°urlæºæ–‡ä»¶    
      * @param url    
      * @return    
      * @throws IOException    
@@ -40,14 +40,14 @@ public class IPGeographic {
      *     
      * @param htmlContent    
      * @param fileName    
-     * @return ipµØÖ·ºÍipµØÀíĞÅÏ¢    
+     * @return ipåœ°å€å’Œipåœ°ç†ä¿¡æ¯    
      * @throws IOException    
      */     
     private static HashMap<String,String> getIpList(String htmlContent,String fileName) throws IOException {      
         String str1[] = htmlContent.split("<tr><td width=\"140\">IP:Port</td><td width=\"40\">Type</td><td width=\"90\">Speed</td><td width=\"160\"> Country/Area</td></tr>");      
-        String str2 = str1[1];// ip¼°ÓàÏÂ²¿·Ö      
+        String str2 = str1[1];// ipåŠä½™ä¸‹éƒ¨åˆ†      
         String str3[] = str2.split("</table>");      
-        String str4 = str3[0];// <tr><td>24.25.26.128<SCRIPT type=text/javascript>document.write(":"+q+d)</SCRIPT></td><td>HTTP</td><td>296,984,984</td><td>ÃÀ¹ú Î¬¼ªÄáÑÇÖİ</td></tr>      
+        String str4 = str3[0];// <tr><td>24.25.26.128<SCRIPT type=text/javascript>document.write(":"+q+d)</SCRIPT></td><td>HTTP</td><td>296,984,984</td><td>ç¾å›½ ç»´å‰å°¼äºšå·</td></tr>      
               
         String str5[]=str4.split("<tr><td>");      
         HashMap<String,String> map=new HashMap<String,String>();      
@@ -65,7 +65,7 @@ public class IPGeographic {
         return map;      
     }      
     /**    
-     * ¸ù¾İip.cnÊı¾İ¿â£¬»ñµÃipµØÀíĞÅÏ¢    
+     * æ ¹æ®ip.cnæ•°æ®åº“ï¼Œè·å¾—ipåœ°ç†ä¿¡æ¯    
      * @param ipList    
      * @throws IOException    
      */     
@@ -117,6 +117,6 @@ public class IPGeographic {
         os.close();      
         out.close();  
         
-        System.out.println("²Ù×÷Íê³É£¬¹²»ñÈ¡"+count+"¸öIP¼°ÆäµØÖ·ĞÅÏ¢");      
+        System.out.println("æ“ä½œå®Œæˆï¼Œå…±è·å–"+count+"ä¸ªIPåŠå…¶åœ°å€ä¿¡æ¯");      
     }      
 }   

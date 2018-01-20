@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class QQWry {  
-    private String DbPath = System.getProperty("user.dir")+"\\data\\qqwry.dat";    //´¿ÕæIPÊı¾İ¿âµØÖ·  
+    private String DbPath = System.getProperty("user.dir")+"\\data\\qqwry.dat";    //çº¯çœŸIPæ•°æ®åº“åœ°å€  
     private String Country, LocalStr;  
     private long IPN;  
     private int RecordCount, CountryFlag;  
@@ -49,7 +49,7 @@ public class QQWry {
         LastStartIP = this.B2L(buff);  
         RecordCount = (int)((LastStartIP - FirstStartIP) / 7);  
         if (RecordCount <= 1) {  
-            LocalStr = Country = "Î´Öª";  
+            LocalStr = Country = "æœªçŸ¥";  
             throw new Exception();  
         }  
           
@@ -156,45 +156,45 @@ public class QQWry {
         return StartIP;  
     }  
     /* 
-     * ×ª»»³ÇÊĞÖĞÎÄÃûÎª·ÖÕ¾µÄ¶ş¼¶ÓòÃû½Úµã 
+     * è½¬æ¢åŸå¸‚ä¸­æ–‡åä¸ºåˆ†ç«™çš„äºŒçº§åŸŸåèŠ‚ç‚¹ 
      */  
     private String getSitekey(String city) {  
         String sitekey="";  
-            if(city.indexOf("±±¾©",0)>0){  
+            if(city.indexOf("åŒ—äº¬",0)>0){  
                 sitekey="www";  
-            }else if(city.indexOf("ÉÏº£",0)>0){  
+            }else if(city.indexOf("ä¸Šæµ·",0)>0){  
                 sitekey="sh";  
-            }else if(city.indexOf("ÄÏ¾©",0)>0){  
+            }else if(city.indexOf("å—äº¬",0)>0){  
                 sitekey="nj";  
-            }else if(city.indexOf("¹ãÖİ",0)>0){  
+            }else if(city.indexOf("å¹¿å·",0)>0){  
                 sitekey="gz";  
-            }else if(city.indexOf("ÉîÛÚ",0)>0){  
+            }else if(city.indexOf("æ·±åœ³",0)>0){  
                 sitekey="sz";  
-            }else if(city.indexOf("ÉòÑô",0)>0){  
+            }else if(city.indexOf("æ²ˆé˜³",0)>0){  
                 sitekey="sy";  
-            }else if(city.indexOf("³É¶¼",0)>0){  
+            }else if(city.indexOf("æˆéƒ½",0)>0){  
                 sitekey="cd";  
-            }else if(city.indexOf("Ìì½ò",0)>0){  
+            }else if(city.indexOf("å¤©æ´¥",0)>0){  
                 sitekey="tj";  
-            }else if(city.indexOf("ÖØÇì",0)>0){  
+            }else if(city.indexOf("é‡åº†",0)>0){  
                 sitekey="cq";  
-            }else if(city.indexOf("Ö£Öİ",0)>0){  
+            }else if(city.indexOf("éƒ‘å·",0)>0){  
                 sitekey="zz";  
-            }else if(city.indexOf("Îäºº",0)>0){  
+            }else if(city.indexOf("æ­¦æ±‰",0)>0){  
                 sitekey="wh";  
-            }else if(city.indexOf("³¤É³",0)>0){  
+            }else if(city.indexOf("é•¿æ²™",0)>0){  
                 sitekey="cs";  
-            }else if(city.indexOf("¼ÃÄÏ",0)>0){  
+            }else if(city.indexOf("æµå—",0)>0){  
                 sitekey="jn";  
-            }else if(city.indexOf("³¤´º",0)>0){  
+            }else if(city.indexOf("é•¿æ˜¥",0)>0){  
                 sitekey="cc";  
-            }else if(city.indexOf("ºÏ·Ê",0)>0){  
+            }else if(city.indexOf("åˆè‚¥",0)>0){  
                 sitekey="hf";  
-            }else if(city.indexOf("º¼Öİ",0)>0){  
+            }else if(city.indexOf("æ­å·",0)>0){  
                 sitekey="hz";  
-            }else if(city.indexOf("Î÷°²",0)>0){  
+            }else if(city.indexOf("è¥¿å®‰",0)>0){  
                 sitekey="xa";  
-            }else if(city.indexOf("ÖØÇì",0)>0){  
+            }else if(city.indexOf("é‡åº†",0)>0){  
                 sitekey="cq";  
             }else{  
                 sitekey="www";  
@@ -211,11 +211,11 @@ public class QQWry {
     	//qq: 119.147.15.17
     	//sample: 125.76.253.168
         QQWry w = new QQWry();  
-        w.seek("119.147.15.17");  
+        w.seek("125.76.253.168");  
         String city=w.getCountry().toString();  
         String site=w.getSitekey(city);  
-        System.out.println(city);   
-        System.out.println(site);   
+        System.out.println("city>>>" + city);   
+        System.out.println("site>>>" + site);   
     }  
   
 }

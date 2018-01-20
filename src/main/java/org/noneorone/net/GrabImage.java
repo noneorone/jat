@@ -30,7 +30,7 @@ public class GrabImage {
 	    
 	    
 	/**   
-	* 导入网络图片到缓冲区   
+	* 瀵煎叆缃戠粶鍥剧墖鍒扮紦鍐插尯   
 	*/    
 	public BufferedImage loadImageUrl(String imgName)     
 	{     
@@ -48,7 +48,7 @@ public class GrabImage {
 	    
 	    
 	/**   
-	* 生成新图片到本地   
+	* 鐢熸垚鏂板浘鐗囧埌鏈湴   
 	*/    
 	public void writeImageLocal(String newImage, BufferedImage img)     
 	{     

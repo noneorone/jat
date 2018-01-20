@@ -63,7 +63,7 @@ public class RequestProxy{
     		out.close();
     		dis.close();
     		String tmpBuf = new String(ret_value,"UTF-8");
-    		//½âÎöHTML
+    		//è§£æHTML
     		retStr=parseGd(carNo1,tmpBuf);
     	}
     } catch (Exception e) {
@@ -76,25 +76,25 @@ public class RequestProxy{
   }
   //-------------------------------------------------
   public static String parseGd(String carNo,String inData){
-    String retStr=carNo+"Î¥ÕÂĞÅÏ¢:\r\n";
-    String flagStr = "±§Ç¸£¬ÏµÍ³Î¬»¤ÖĞ£¬ÇëÉÔºóÔÙÊÔ¡­";
+    String retStr=carNo+"è¿ç« ä¿¡æ¯:\r\n";
+    String flagStr = "æŠ±æ­‰ï¼Œç³»ç»Ÿç»´æŠ¤ä¸­ï¼Œè¯·ç¨åå†è¯•â€¦";
     
     String tmpBuf=inData;
-    String splitStr = "²éÑ¯½á¹ûÈçÏÂ:";
-    String splitStr0 = "¸Ã½»Í¨Î¥·¨ÓĞ¼ÇÂ¼£¡";
-    String splitStr1 = "¸Ã½»Í¨Î¥·¨ÎŞ¼ÇÂ¼£¡";
-    String splitStr2 = "ÎÄÊéºÅ/¾ö¶¨ÊéºÅ/ÎÄÊé±àºÅ:";
-    String splitStr3 = "Î¥·¨Ê±¼ä:";
-    String splitStr4 = "Î¥·¨µØµã:";
-    String splitStr5 = "Î¥·¨ĞĞÎªÃû³Æ:";
-    String splitStr9 = "ÄúÊäÈëµÄÊı¾İÓĞÎó£¬ÇëºË¶ÔºóÔÙ²é£¡";
+    String splitStr = "æŸ¥è¯¢ç»“æœå¦‚ä¸‹:";
+    String splitStr0 = "è¯¥äº¤é€šè¿æ³•æœ‰è®°å½•ï¼";
+    String splitStr1 = "è¯¥äº¤é€šè¿æ³•æ— è®°å½•ï¼";
+    String splitStr2 = "æ–‡ä¹¦å·/å†³å®šä¹¦å·/æ–‡ä¹¦ç¼–å·:";
+    String splitStr3 = "è¿æ³•æ—¶é—´:";
+    String splitStr4 = "è¿æ³•åœ°ç‚¹:";
+    String splitStr5 = "è¿æ³•è¡Œä¸ºåç§°:";
+    String splitStr9 = "æ‚¨è¾“å…¥çš„æ•°æ®æœ‰è¯¯ï¼Œè¯·æ ¸å¯¹åå†æŸ¥ï¼";
     String splitStr15 = "<input type=\"hidden\"";
     String splitStr16 = "images/sysbusy.jpg";
     
     int off;
-    //½âÎöHTML
+    //è§£æHTML
     try {
-      //´¦ÀíÍøÂç·±Ã¦
+      //å¤„ç†ç½‘ç»œç¹å¿™
       off = tmpBuf.indexOf(splitStr16);
       if(off>0) {
         retStr = flagStr;
@@ -109,7 +109,7 @@ public class RequestProxy{
       tmpBuf = tmpBuf.substring(off, tmpBuf.length());
       off = tmpBuf.indexOf(splitStr0);
       if(off>0) {
-        //ÓĞÎ¥ÕÂ¼ÇÂ¼
+        //æœ‰è¿ç« è®°å½•
         while(true) {
           off=tmpBuf.indexOf(splitStr2);
           if(off<0) {
@@ -153,10 +153,10 @@ public class RequestProxy{
           
         }
       } else if(tmpBuf.indexOf(splitStr1)>0){
-        //Ã»ÓĞÎ¥ÕÂ¼ÇÂ¼
-        retStr=retStr + "ÎŞ½»Í¨Î¥·¨¼ÇÂ¼£¡";
+        //æ²¡æœ‰è¿ç« è®°å½•
+        retStr=retStr + "æ— äº¤é€šè¿æ³•è®°å½•ï¼";
       }else if(tmpBuf.indexOf(splitStr9)>0){
-        retStr = retStr + "ÄúÊäÈëµÄ³µÅÆºÅÓë³µ¼ÜÎ²ºÅ²»Æ¥Åä£¬ÇëºË¶ÔºóÔÙ²é£¡";
+        retStr = retStr + "æ‚¨è¾“å…¥çš„è½¦ç‰Œå·ä¸è½¦æ¶å°¾å·ä¸åŒ¹é…ï¼Œè¯·æ ¸å¯¹åå†æŸ¥ï¼";
       }
     } catch (Exception e) {
       System.out.println("[Exception] - " + e.toString());
@@ -176,10 +176,10 @@ public class RequestProxy{
   public static void main(String[] args) {
     try{
       String retStr="";
-      retStr=getCarStatus("ÔÁ","B12U40","02","1051");
-//      retStr=getCarStatus("ÔÁ","B14U80","02","1095");
-//      retStr=getCarStatus("ÔÁ","BLG610","02","8497");
-//      retStr=getCarStatus("ÔÁ","B14","02","1000");
+      retStr=getCarStatus("ç²¤","B12U40","02","1051");
+//      retStr=getCarStatus("ç²¤","B14U80","02","1095");
+//      retStr=getCarStatus("ç²¤","BLG610","02","8497");
+//      retStr=getCarStatus("ç²¤","B14","02","1000");
       System.out.println(retStr);
     }catch(Exception e){
       e.printStackTrace();
