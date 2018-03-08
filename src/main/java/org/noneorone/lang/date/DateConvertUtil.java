@@ -1,6 +1,8 @@
-package org.noneorone.util.date;
+package org.noneorone.lang.date;
 
 import java.text.*;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -9,27 +11,28 @@ import java.util.Random;
 
 public class DateConvertUtil {
 
-    /**
-     * ×ª»»Ó¢ÎÄÈÕÆÚÊ±¼ä¸ñÊ½ÈÕÆÚ¸ñÊ½´®
-     *
-     * @param dateStr eg.2016-11-02
-     * @return
-     */
-    public static Date parseENDateTime(String dateStr) {
-        Date date = null;
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd kk:mm:ss yyyy", Locale.ENGLISH);
-            date = sdf.parse(dateStr);
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
-        return date;
-    }
-    
 	/**
-	 * »ñÈ¡ÏÖÔÚÊ±¼ä
+	 * ×ªï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ú¸ï¿½Ê½ï¿½ï¿½
+	 *
+	 * @param dateStr
+	 *            eg.2016-11-02
+	 * @return
+	 */
+	public static Date parseENDateTime(String dateStr) {
+		Date date = null;
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd kk:mm:ss yyyy", Locale.ENGLISH);
+			date = sdf.parse(dateStr);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+
+	/**
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
-	 * @return ·µ»ØÊ±¼äÀàĞÍ yyyy-MM-dd HH:mm:ss
+	 * @return ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
 	 */
 	public static Date getNowDate() {
 		Date currentTime = new Date();
@@ -41,9 +44,9 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñÈ¡ÏÖÔÚÊ±¼ä
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
-	 * @return·µ»Ø¶ÌÊ±¼ä¸ñÊ½ yyyy-MM-dd
+	 * @returnï¿½ï¿½ï¿½Ø¶ï¿½Ê±ï¿½ï¿½ï¿½Ê½ yyyy-MM-dd
 	 */
 	public static Date getNowDateShort() {
 		Date currentTime = new Date();
@@ -55,9 +58,9 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñÈ¡ÏÖÔÚÊ±¼ä
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
-	 * @return·µ»Ø×Ö·û´®¸ñÊ½ yyyy-MM-dd HH:mm:ss
+	 * @returnï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ yyyy-MM-dd HH:mm:ss
 	 */
 	public static String getStringDate() {
 		Date currentTime = new Date();
@@ -67,9 +70,9 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñÈ¡ÏÖÔÚÊ±¼ä
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
-	 * @return ·µ»Ø¶ÌÊ±¼ä×Ö·û´®¸ñÊ½yyyy-MM-dd
+	 * @return ï¿½ï¿½ï¿½Ø¶ï¿½Ê±ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½yyyy-MM-dd
 	 */
 	public static String getStringDateShort() {
 		Date currentTime = new Date();
@@ -79,7 +82,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñÈ¡Ê±¼ä Ğ¡Ê±:·Ö;Ãë HH:mm:ss
+	 * ï¿½ï¿½È¡Ê±ï¿½ï¿½ Ğ¡Ê±:ï¿½ï¿½;ï¿½ï¿½ HH:mm:ss
 	 * 
 	 * @return
 	 */
@@ -91,7 +94,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ½«³¤Ê±¼ä¸ñÊ½×Ö·û´®×ª»»ÎªÊ±¼ä yyyy-MM-dd HH:mm:ss
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªÊ±ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
 	 * 
 	 * @param strDate
 	 * @return
@@ -104,7 +107,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ½«³¤Ê±¼ä¸ñÊ½Ê±¼ä×ª»»Îª×Ö·û´® yyyy-MM-dd HH:mm:ss
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½Ê±ï¿½ï¿½×ªï¿½ï¿½Îªï¿½Ö·ï¿½ï¿½ï¿½ yyyy-MM-dd HH:mm:ss
 	 * 
 	 * @param dateDate
 	 * @return
@@ -116,7 +119,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ½«¶ÌÊ±¼ä¸ñÊ½Ê±¼ä×ª»»Îª×Ö·û´® yyyy-MM-dd
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½Ê±ï¿½ï¿½×ªï¿½ï¿½Îªï¿½Ö·ï¿½ï¿½ï¿½ yyyy-MM-dd
 	 * 
 	 * @param dateDate
 	 * @param k
@@ -129,7 +132,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ½«¶ÌÊ±¼ä¸ñÊ½×Ö·û´®×ª»»ÎªÊ±¼ä yyyy-MM-dd
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªÊ±ï¿½ï¿½ yyyy-MM-dd
 	 * 
 	 * @param strDate
 	 * @return
@@ -142,7 +145,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½ÏÖÔÚÊ±¼ä
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
 	 * @return
 	 */
@@ -152,7 +155,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ÌáÈ¡Ò»¸öÔÂÖĞµÄ×îºóÒ»Ìì
+	 * ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	 * 
 	 * @param day
 	 * @return
@@ -165,9 +168,9 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½ÏÖÔÚÊ±¼ä
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * 
-	 * @return ×Ö·û´® yyyyMMdd HHmmss
+	 * @return ï¿½Ö·ï¿½ï¿½ï¿½ yyyyMMdd HHmmss
 	 */
 	public static String getStringToday() {
 		Date currentTime = new Date();
@@ -177,7 +180,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½ÏÖÔÚĞ¡Ê±
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡Ê±
 	 */
 	public static String getHour() {
 		Date currentTime = new Date();
@@ -189,7 +192,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½ÏÖÔÚ·ÖÖÓ
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½
 	 * 
 	 * @return
 	 */
@@ -203,7 +206,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ¸ù¾İÓÃ»§´«ÈëµÄÊ±¼ä±íÊ¾¸ñÊ½£¬·µ»Øµ±Ç°Ê±¼äµÄ¸ñÊ½ Èç¹ûÊÇyyyyMMdd£¬×¢Òâ×ÖÄ¸y²»ÄÜ´óĞ´¡£
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½Ç°Ê±ï¿½ï¿½Ä¸ï¿½Ê½ ï¿½ï¿½ï¿½ï¿½ï¿½yyyyMMddï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ä¸yï¿½ï¿½ï¿½Ü´ï¿½Ğ´ï¿½ï¿½
 	 * 
 	 * @param sformat
 	 *            yyyyMMddhhmmss
@@ -217,7 +220,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ¶ş¸öĞ¡Ê±Ê±¼ä¼äµÄ²îÖµ,±ØĞë±£Ö¤¶ş¸öÊ±¼ä¶¼ÊÇ"HH:MM"µÄ¸ñÊ½£¬·µ»Ø×Ö·ûĞÍµÄ·ÖÖÓ
+	 * ï¿½ï¿½ï¿½ï¿½Ğ¡Ê±Ê±ï¿½ï¿½ï¿½Ä²ï¿½Öµ,ï¿½ï¿½ï¿½ë±£Ö¤ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¶¼ï¿½ï¿½"HH:MM"ï¿½Ä¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ÍµÄ·ï¿½ï¿½ï¿½
 	 */
 	public static String getTwoHour(String st1, String st2) {
 		String[] kk = null;
@@ -227,10 +230,8 @@ public class DateConvertUtil {
 		if (Integer.parseInt(kk[0]) < Integer.parseInt(jj[0]))
 			return "0";
 		else {
-			double y = Double.parseDouble(kk[0]) + Double.parseDouble(kk[1])
-					/ 60;
-			double u = Double.parseDouble(jj[0]) + Double.parseDouble(jj[1])
-					/ 60;
+			double y = Double.parseDouble(kk[0]) + Double.parseDouble(kk[1]) / 60;
+			double u = Double.parseDouble(jj[0]) + Double.parseDouble(jj[1]) / 60;
 			if ((y - u) > 0)
 				return y - u + "";
 			else
@@ -239,7 +240,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½¶ş¸öÈÕÆÚ¼äµÄ¼ä¸ôÌìÊı
+	 * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String getTwoDay(String sj1, String sj2) {
 		SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -255,7 +256,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * Ê±¼äÇ°ÍÆ»òºóÍÆ·ÖÖÓ,ÆäÖĞJJ±íÊ¾·ÖÖÓ.
+	 * Ê±ï¿½ï¿½Ç°ï¿½Æ»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½JJï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½.
 	 */
 	public static String getPreTime(String sj1, String jj) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -271,15 +272,14 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * µÃµ½Ò»¸öÊ±¼äÑÓºó»òÇ°ÒÆ¼¸ÌìµÄÊ±¼ä,nowdateÎªÊ±¼ä,delayÎªÇ°ÒÆ»òºóÑÓµÄÌìÊı
+	 * ï¿½Ãµï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Óºï¿½ï¿½Ç°ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½,nowdateÎªÊ±ï¿½ï¿½,delayÎªÇ°ï¿½Æ»ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String getNextDay(String nowdate, String delay) {
 		try {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			String mdate = "";
 			Date d = strToDate(nowdate);
-			long myTime = (d.getTime() / 1000) + Integer.parseInt(delay) * 24
-					* 60 * 60;
+			long myTime = (d.getTime() / 1000) + Integer.parseInt(delay) * 24 * 60 * 60;
 			d.setTime(myTime * 1000);
 			mdate = format.format(d);
 			return mdate;
@@ -289,7 +289,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÈóÄê
+	 * ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param ddate
 	 * @return
@@ -297,8 +297,8 @@ public class DateConvertUtil {
 	public static boolean isLeapYear(String ddate) {
 
 		/**
-		 * ÏêÏ¸Éè¼Æ£º 1.±»400Õû³ıÊÇÈòÄê£¬·ñÔò£º 2.²»ÄÜ±»4Õû³ıÔò²»ÊÇÈòÄê 3.ÄÜ±»4Õû³ıÍ¬Ê±²»ÄÜ±»100Õû³ıÔòÊÇÈòÄê
-		 * 3.ÄÜ±»4Õû³ıÍ¬Ê±ÄÜ±»100Õû³ıÔò²»ÊÇÈòÄê
+		 * ï¿½ï¿½Ï¸ï¿½ï¿½Æ£ï¿½ 1.ï¿½ï¿½400ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê£¬ï¿½ï¿½ï¿½ï¿½ 2.ï¿½ï¿½ï¿½Ü±ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * 3.ï¿½Ü±ï¿½4ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½Ü±ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.ï¿½Ü±ï¿½4ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½Ü±ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 */
 		Date d = strToDate(ddate);
 		GregorianCalendar gc = (GregorianCalendar) Calendar.getInstance();
@@ -316,7 +316,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ·µ»ØÃÀ¹úÊ±¼ä¸ñÊ½ 26 Apr 2006
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½ 26 Apr 2006
 	 * 
 	 * @param str
 	 * @return
@@ -331,7 +331,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñÈ¡Ò»¸öÔÂµÄ×îºóÒ»Ìì
+	 * ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	 * 
 	 * @param dat
 	 * @return
@@ -340,8 +340,7 @@ public class DateConvertUtil {
 		String str = dat.substring(0, 8);
 		String month = dat.substring(5, 7);
 		int mon = Integer.parseInt(month);
-		if (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8
-				|| mon == 10 || mon == 12) {
+		if (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12) {
 			str += "31";
 		} else if (mon == 4 || mon == 6 || mon == 9 || mon == 11) {
 			str += "30";
@@ -356,7 +355,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ÅĞ¶Ï¶ş¸öÊ±¼äÊÇ·ñÔÚÍ¬Ò»¸öÖÜ
+	 * ï¿½Ğ¶Ï¶ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param date1
 	 * @param date2
@@ -369,24 +368,21 @@ public class DateConvertUtil {
 		cal2.setTime(date2);
 		int subYear = cal1.get(Calendar.YEAR) - cal2.get(Calendar.YEAR);
 		if (0 == subYear) {
-			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2
-					.get(Calendar.WEEK_OF_YEAR))
+			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2.get(Calendar.WEEK_OF_YEAR))
 				return true;
 		} else if (1 == subYear && 11 == cal2.get(Calendar.MONTH)) {
-			// Èç¹û12ÔÂµÄ×îºóÒ»ÖÜºá¿çÀ´ÄêµÚÒ»ÖÜµÄ»°Ôò×îºóÒ»ÖÜ¼´Ëã×öÀ´ÄêµÄµÚÒ»ÖÜ
-			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2
-					.get(Calendar.WEEK_OF_YEAR))
+			// ï¿½ï¿½ï¿½12ï¿½Âµï¿½ï¿½ï¿½ï¿½Ò»ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ÜµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ü¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½
+			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2.get(Calendar.WEEK_OF_YEAR))
 				return true;
 		} else if (-1 == subYear && 11 == cal1.get(Calendar.MONTH)) {
-			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2
-					.get(Calendar.WEEK_OF_YEAR))
+			if (cal1.get(Calendar.WEEK_OF_YEAR) == cal2.get(Calendar.WEEK_OF_YEAR))
 				return true;
 		}
 		return false;
 	}
 
 	/**
-	 * ²úÉúÖÜĞòÁĞ,¼´µÃµ½µ±Ç°Ê±¼äËùÔÚµÄÄê¶ÈÊÇµÚ¼¸ÖÜ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ÇµÚ¼ï¿½ï¿½ï¿½
 	 * 
 	 * @return
 	 */
@@ -400,48 +396,48 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * »ñµÃÒ»¸öÈÕÆÚËùÔÚµÄÖÜµÄĞÇÆÚ¼¸µÄÈÕÆÚ£¬ÈçÒªÕÒ³ö2002Äê2ÔÂ3ÈÕËùÔÚÖÜµÄĞÇÆÚÒ»ÊÇ¼¸ºÅ
+	 * ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Òªï¿½Ò³ï¿½2002ï¿½ï¿½2ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ç¼ï¿½ï¿½ï¿½
 	 * 
 	 * @param sdate
 	 * @param num
 	 * @return
 	 */
 	public static String getWeek(String sdate, String num) {
-		// ÔÙ×ª»»ÎªÊ±¼ä
+		// ï¿½ï¿½×ªï¿½ï¿½ÎªÊ±ï¿½ï¿½
 		Date dd = DateConvertUtil.strToDate(sdate);
 		Calendar c = Calendar.getInstance();
 		c.setTime(dd);
-		if (num.equals("1")) // ·µ»ØĞÇÆÚÒ»ËùÔÚµÄÈÕÆÚ
+		if (num.equals("1")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-		else if (num.equals("2")) // ·µ»ØĞÇÆÚ¶şËùÔÚµÄÈÕÆÚ
+		else if (num.equals("2")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.TUESDAY);
-		else if (num.equals("3")) // ·µ»ØĞÇÆÚÈıËùÔÚµÄÈÕÆÚ
+		else if (num.equals("3")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
-		else if (num.equals("4")) // ·µ»ØĞÇÆÚËÄËùÔÚµÄÈÕÆÚ
+		else if (num.equals("4")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.THURSDAY);
-		else if (num.equals("5")) // ·µ»ØĞÇÆÚÎåËùÔÚµÄÈÕÆÚ
+		else if (num.equals("5")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY);
-		else if (num.equals("6")) // ·µ»ØĞÇÆÚÁùËùÔÚµÄÈÕÆÚ
+		else if (num.equals("6")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-		else if (num.equals("0")) // ·µ»ØĞÇÆÚÈÕËùÔÚµÄÈÕÆÚ
+		else if (num.equals("0")) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 			c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
 		return new SimpleDateFormat("yyyy-MM-dd").format(c.getTime());
 	}
 
 	/**
-	 * ¸ù¾İÒ»¸öÈÕÆÚ£¬·µ»ØÊÇĞÇÆÚ¼¸µÄ×Ö·û´®
+	 * ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 	 * 
 	 * @param sdate
 	 * @return
 	 */
 	public static String getWeek(String sdate) {
-		// ÔÙ×ª»»ÎªÊ±¼ä
+		// ï¿½ï¿½×ªï¿½ï¿½ÎªÊ±ï¿½ï¿½
 		Date date = DateConvertUtil.strToDate(sdate);
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
 		// int hour=c.get(Calendar.DAY_OF_WEEK);
-		// hourÖĞ´æµÄ¾ÍÊÇĞÇÆÚ¼¸ÁË£¬Æä·¶Î§ 1~7
-		// 1=ĞÇÆÚÈÕ 7=ĞÇÆÚÁù£¬ÆäËûÀàÍÆ
+		// hourï¿½Ğ´ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ë£ï¿½ï¿½ä·¶Î§ 1~7
+		// 1=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return new SimpleDateFormat("EEEE").format(c.getTime());
 	}
 
@@ -449,25 +445,25 @@ public class DateConvertUtil {
 		String str = "";
 		str = DateConvertUtil.getWeek(sdate);
 		if ("1".equals(str)) {
-			str = "ĞÇÆÚÈÕ";
+			str = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		} else if ("2".equals(str)) {
-			str = "ĞÇÆÚÒ»";
+			str = "ï¿½ï¿½ï¿½ï¿½Ò»";
 		} else if ("3".equals(str)) {
-			str = "ĞÇÆÚ¶ş";
+			str = "ï¿½ï¿½ï¿½Ú¶ï¿½";
 		} else if ("4".equals(str)) {
-			str = "ĞÇÆÚÈı";
+			str = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		} else if ("5".equals(str)) {
-			str = "ĞÇÆÚËÄ";
+			str = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		} else if ("6".equals(str)) {
-			str = "ĞÇÆÚÎå";
+			str = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		} else if ("7".equals(str)) {
-			str = "ĞÇÆÚÁù";
+			str = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		}
 		return str;
 	}
 
 	/**
-	 * Á½¸öÊ±¼äÖ®¼äµÄÌìÊı
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param date1
 	 * @param date2
@@ -478,7 +474,7 @@ public class DateConvertUtil {
 			return 0;
 		if (date2 == null || date2.equals(""))
 			return 0;
-		// ×ª»»Îª±ê×¼Ê±¼ä
+		// ×ªï¿½ï¿½Îªï¿½ï¿½×¼Ê±ï¿½ï¿½
 		SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date = null;
 		java.util.Date mydate = null;
@@ -492,17 +488,17 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ĞÎ³ÉÈçÏÂµÄÈÕÀú £¬ ¸ù¾İ´«ÈëµÄÒ»¸öÊ±¼ä·µ»ØÒ»¸ö½á¹¹ ĞÇÆÚÈÕ ĞÇÆÚÒ» ĞÇÆÚ¶ş ĞÇÆÚÈı ĞÇÆÚËÄ ĞÇÆÚÎå ĞÇÆÚÁù ÏÂÃæÊÇµ±ÔÂµÄ¸÷¸öÊ±¼ä
-	 * ´Ëº¯Êı·µ»Ø¸ÃÈÕÀúµÚÒ»ĞĞĞÇÆÚÈÕËùÔÚµÄÈÕÆÚ
+	 * ï¿½Î³ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½İ´ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ä·µï¿½ï¿½Ò»ï¿½ï¿½ï¿½á¹¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò» ï¿½ï¿½ï¿½Ú¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ÂµÄ¸ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param sdate
 	 * @return
 	 */
 	public static String getNowMonth(String sdate) {
-		// È¡¸ÃÊ±¼äËùÔÚÔÂµÄÒ»ºÅ
+		// È¡ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½Ò»ï¿½ï¿½
 		sdate = sdate.substring(0, 8) + "01";
 
-		// µÃµ½Õâ¸öÔÂµÄ1ºÅÊÇĞÇÆÚ¼¸
+		// ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½
 		Date date = DateConvertUtil.strToDate(sdate);
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
@@ -512,10 +508,10 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * È¡µÃÊı¾İ¿âÖ÷¼ü Éú³É¸ñÊ½Îªyyyymmddhhmmss+kÎ»Ëæ»úÊı
+	 * È¡ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½É¸ï¿½Ê½Îªyyyymmddhhmmss+kÎ»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param k
-	 *            ±íÊ¾ÊÇÈ¡¼¸Î»Ëæ»úÊı£¬¿ÉÒÔ×Ô¼º¶¨
+	 *            ï¿½ï¿½Ê¾ï¿½ï¿½È¡ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½
 	 */
 
 	public static String getNo(int k) {
@@ -524,7 +520,7 @@ public class DateConvertUtil {
 	}
 
 	/**
-	 * ·µ»ØÒ»¸öËæ»úÊı
+	 * ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param i
 	 * @return
@@ -565,90 +561,91 @@ public class DateConvertUtil {
 	}
 
 	/***************************************************************************
-	 * //nd=1±íÊ¾·µ»ØµÄÖµÖĞ°üº¬Äê¶È //yf=1±íÊ¾·µ»ØµÄÖµÖĞ°üº¬ÔÂ·İ //rq=1±íÊ¾·µ»ØµÄÖµÖĞ°üº¬ÈÕÆÚ //format±íÊ¾·µ»ØµÄ¸ñÊ½ 1
-	 * ÒÔÄêÔÂÈÕÖĞÎÄ·µ»Ø 2 ÒÔºáÏß-·µ»Ø // 3 ÒÔĞ±Ïß/·µ»Ø 4 ÒÔËõĞ´²»´øÆäËü·ûºÅĞÎÊ½·µ»Ø // 5 ÒÔµãºÅ.·µ»Ø
+	 * //nd=1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Øµï¿½Öµï¿½Ğ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ //yf=1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Øµï¿½Öµï¿½Ğ°ï¿½ï¿½ï¿½ï¿½Â·ï¿½ //rq=1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Øµï¿½Öµï¿½Ğ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * //formatï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ØµÄ¸ï¿½Ê½ 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ 2 ï¿½Ôºï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ // 3 ï¿½ï¿½Ğ±ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ 4
+	 * ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ // 5 ï¿½Ôµï¿½ï¿½.ï¿½ï¿½ï¿½ï¿½
 	 **************************************************************************/
-	public static String getStringDateMonth(String sdate, String nd, String yf,
-			String rq, String format) {
+	public static String getStringDateMonth(String sdate, String nd, String yf, String rq, String format) {
 		Date currentTime = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String dateString = formatter.format(currentTime);
 		@SuppressWarnings("unused")
-		String s_nd = dateString.substring(0, 4); // Äê·İ
+		String s_nd = dateString.substring(0, 4); // ï¿½ï¿½ï¿½
 		@SuppressWarnings("unused")
-		String s_yf = dateString.substring(5, 7); // ÔÂ·İ
+		String s_yf = dateString.substring(5, 7); // ï¿½Â·ï¿½
 		@SuppressWarnings("unused")
-		String s_rq = dateString.substring(8, 10); // ÈÕÆÚ
+		String s_rq = dateString.substring(8, 10); // ï¿½ï¿½ï¿½ï¿½
 		String sreturn = "";
-//		roc.util.MyChar mc = new roc.util.MyChar();
-//		if (sdate == null || sdate.equals("") || !mc.Isdate(sdate)) { // ´¦Àí¿ÕÖµÇé¿ö
-//			if (nd.equals("1")) {
-//				sreturn = s_nd;
-//				// ´¦Àí¼ä¸ô·û
-//				if (format.equals("1"))
-//					sreturn = sreturn + "Äê";
-//				else if (format.equals("2"))
-//					sreturn = sreturn + "-";
-//				else if (format.equals("3"))
-//					sreturn = sreturn + "/";
-//				else if (format.equals("5"))
-//					sreturn = sreturn + ".";
-//			}
-//			// ´¦ÀíÔÂ·İ
-//			if (yf.equals("1")) {
-//				sreturn = sreturn + s_yf;
-//				if (format.equals("1"))
-//					sreturn = sreturn + "ÔÂ";
-//				else if (format.equals("2"))
-//					sreturn = sreturn + "-";
-//				else if (format.equals("3"))
-//					sreturn = sreturn + "/";
-//				else if (format.equals("5"))
-//					sreturn = sreturn + ".";
-//			}
-//			// ´¦ÀíÈÕÆÚ
-//			if (rq.equals("1")) {
-//				sreturn = sreturn + s_rq;
-//				if (format.equals("1"))
-//					sreturn = sreturn + "ÈÕ";
-//			}
-//		} else {
-//			// ²»ÊÇ¿ÕÖµ£¬Ò²ÊÇÒ»¸öºÏ·¨µÄÈÕÆÚÖµ£¬ÔòÏÈ½«Æä×ª»»Îª±ê×¼µÄÊ±¼ä¸ñÊ½
-//			sdate = roc.util.RocDate.getOKDate(sdate);
-//			s_nd = sdate.substring(0, 4); // Äê·İ
-//			s_yf = sdate.substring(5, 7); // ÔÂ·İ
-//			s_rq = sdate.substring(8, 10); // ÈÕÆÚ
-//			if (nd.equals("1")) {
-//				sreturn = s_nd;
-//				// ´¦Àí¼ä¸ô·û
-//				if (format.equals("1"))
-//					sreturn = sreturn + "Äê";
-//				else if (format.equals("2"))
-//					sreturn = sreturn + "-";
-//				else if (format.equals("3"))
-//					sreturn = sreturn + "/";
-//				else if (format.equals("5"))
-//					sreturn = sreturn + ".";
-//			}
-//			// ´¦ÀíÔÂ·İ
-//			if (yf.equals("1")) {
-//				sreturn = sreturn + s_yf;
-//				if (format.equals("1"))
-//					sreturn = sreturn + "ÔÂ";
-//				else if (format.equals("2"))
-//					sreturn = sreturn + "-";
-//				else if (format.equals("3"))
-//					sreturn = sreturn + "/";
-//				else if (format.equals("5"))
-//					sreturn = sreturn + ".";
-//			}
-//			// ´¦ÀíÈÕÆÚ
-//			if (rq.equals("1")) {
-//				sreturn = sreturn + s_rq;
-//				if (format.equals("1"))
-//					sreturn = sreturn + "ÈÕ";
-//			}
-//		}
+		// roc.util.MyChar mc = new roc.util.MyChar();
+		// if (sdate == null || sdate.equals("") || !mc.Isdate(sdate)) { //
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½
+		// if (nd.equals("1")) {
+		// sreturn = s_nd;
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// else if (format.equals("2"))
+		// sreturn = sreturn + "-";
+		// else if (format.equals("3"))
+		// sreturn = sreturn + "/";
+		// else if (format.equals("5"))
+		// sreturn = sreturn + ".";
+		// }
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½
+		// if (yf.equals("1")) {
+		// sreturn = sreturn + s_yf;
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// else if (format.equals("2"))
+		// sreturn = sreturn + "-";
+		// else if (format.equals("3"))
+		// sreturn = sreturn + "/";
+		// else if (format.equals("5"))
+		// sreturn = sreturn + ".";
+		// }
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// if (rq.equals("1")) {
+		// sreturn = sreturn + s_rq;
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// }
+		// } else {
+		// // ï¿½ï¿½ï¿½Ç¿ï¿½Öµï¿½ï¿½Ò²ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½×¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½
+		// sdate = roc.util.RocDate.getOKDate(sdate);
+		// s_nd = sdate.substring(0, 4); // ï¿½ï¿½ï¿½
+		// s_yf = sdate.substring(5, 7); // ï¿½Â·ï¿½
+		// s_rq = sdate.substring(8, 10); // ï¿½ï¿½ï¿½ï¿½
+		// if (nd.equals("1")) {
+		// sreturn = s_nd;
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// else if (format.equals("2"))
+		// sreturn = sreturn + "-";
+		// else if (format.equals("3"))
+		// sreturn = sreturn + "/";
+		// else if (format.equals("5"))
+		// sreturn = sreturn + ".";
+		// }
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½
+		// if (yf.equals("1")) {
+		// sreturn = sreturn + s_yf;
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// else if (format.equals("2"))
+		// sreturn = sreturn + "-";
+		// else if (format.equals("3"))
+		// sreturn = sreturn + "/";
+		// else if (format.equals("5"))
+		// sreturn = sreturn + ".";
+		// }
+		// // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// if (rq.equals("1")) {
+		// sreturn = sreturn + s_rq;
+		// if (format.equals("1"))
+		// sreturn = sreturn + "ï¿½ï¿½";
+		// }
+		// }
 		return sreturn;
 	}
 
@@ -673,18 +670,18 @@ public class DateConvertUtil {
 	}
 
 	public static String getOKDate(String sdate) {
-//		if (sdate == null || sdate.equals(""))
-//			return getStringDateShort();
-//
-//		if (!DateConvertUtil.Isdate(sdate)) {
-//			sdate = getStringDateShort();
-//		}
-//		// ½«¡°/¡±×ª»»Îª¡°-¡±
-//		sdate = DateConvertUtil.Replace(sdate, "/", "-");
-//		// Èç¹ûÖ»ÓĞ8Î»³¤¶È£¬ÔòÒª½øĞĞ×ª»»
-//		if (sdate.length() == 8)
-//			sdate = sdate.substring(0, 4) + "-" + sdate.substring(4, 6) + "-"
-//					+ sdate.substring(6, 8);
+		// if (sdate == null || sdate.equals(""))
+		// return getStringDateShort();
+		//
+		// if (!DateConvertUtil.Isdate(sdate)) {
+		// sdate = getStringDateShort();
+		// }
+		// // ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½-ï¿½ï¿½
+		// sdate = DateConvertUtil.Replace(sdate, "/", "-");
+		// // ï¿½ï¿½ï¿½Ö»ï¿½ï¿½8Î»ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½
+		// if (sdate.length() == 8)
+		// sdate = sdate.substring(0, 4) + "-" + sdate.substring(4, 6) + "-"
+		// + sdate.substring(6, 8);
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		ParsePosition pos = new ParsePosition(0);
 		Date strtodate = formatter.parse(sdate, pos);
@@ -701,4 +698,34 @@ public class DateConvertUtil {
 			throw new Exception();
 		}
 	}
+
+	/**
+	 * æ£€æµ‹æ—¥æœŸæ˜¯å¦ä¸ºæˆªæ­¢å½“å‰æ—¥æœŸ3ä¸ªæœˆå†…çš„
+	 *
+	 * @param dt
+	 * @return
+	 */
+	public static boolean isIn3MonthsTilNow(long millis) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTimeInMillis(millis);
+		;
+
+		long dtMillis = calendar.getTimeInMillis();
+		long nowMillis = System.currentTimeMillis();
+		long minusDay = (nowMillis - dtMillis) / 1000 / 3600 / 24;
+
+		return minusDay <= 30 * 3;
+	}
+
+	/**
+	 * æ¯”è¾ƒä¸¤ä¸ªæ—¥æœŸä¹‹é—´çš„æœˆä»½ä¹‹å·®
+	 * 
+	 * @param startDateInclusive
+	 * @param endDateExclusive
+	 * @return
+	 */
+	public static int monthSpace(LocalDate startDateInclusive, LocalDate endDateExclusive) {
+		return Period.between(startDateInclusive, endDateExclusive).getMonths();
+	}
+
 }
