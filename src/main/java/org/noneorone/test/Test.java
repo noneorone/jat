@@ -19,8 +19,6 @@ public class Test {
 		// System.out.println(sdf.format(1509627090590L));
 		// System.out.println(formatDate("19 Dec 2009"));
 
-		// String webPageUrl =
-		// "http://m2.tianxiaxinyong.com/promotion/landing/credit-report/per/transition.html?&sn=%E7%8E%8B%E7%8C%9B&rn=%E7%8E%8B%E6%80%9D%E6%96%87&rp=186****2665";
 		// System.out.println(webPageUrl.substring(webPageUrl.indexOf("?")));
 		// System.out.println(webPageUrl.substring(0, webPageUrl.indexOf("?")));
 
@@ -67,7 +65,7 @@ public class Test {
 				String name = f.getName();
 				int lastIndex = name.lastIndexOf(".png");
 				if (lastIndex != -1) {
-					File dest = new File(file, name.substring(0, lastIndex).replaceAll("_页面", ""));
+					File dest = new File(file, name.substring(0, lastIndex).replaceAll("_脪鲁脙忙", ""));
 					f.renameTo(dest);
 					System.out.println(dest.getAbsolutePath());
 				}
@@ -92,7 +90,7 @@ public class Test {
 		String day = date.substring(0, date.indexOf(' '));
 		String month = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' '));
 		String year = date.substring(date.lastIndexOf(' ') + 1, date.length());
-		return year + "年" + months.get(month) + "月" + day + "日";
+		return year + "脛锚" + months.get(month) + "脭脗" + day + "脠脮";
 	}
 
 	private static void test(long dtMillis) {
